@@ -1,0 +1,14 @@
+<!DOCTYPE HTML>
+<html xmlns:th="https://www.thymeleaf.org">
+  <head>
+    <title> Add Results </title>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+  </head>
+
+  <body>
+    <h1>Add Result</h1>
+    <p th:text="'name: ' + ${student.name}" />
+    <p th:text="'Total marks: ' + ${student.totalGrades}" />
+    <a href="/add"> Add another student </a>
+  </body>
+</html>

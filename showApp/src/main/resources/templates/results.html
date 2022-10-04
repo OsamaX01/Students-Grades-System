@@ -1,0 +1,15 @@
+<!DOCTYPE HTML>
+<html>
+    <head>
+        <title> Results </title>
+        <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+    </head>
+
+    <body>
+        <h1>Statistics Result</h1>
+        <p th:text="'Max Mark: ' + ${results.maxMark}" />
+        <p th:text="'Min Mark: ' + ${results.minMark}" />
+        <p th:text="'Average Mark: ' + ${results.studentsAverage}" />
+        <a href="http://localhost:8080"> Home </a>
+    </body>
+</html>

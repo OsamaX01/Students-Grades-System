@@ -1,0 +1,5 @@
+mvn -f .\EnterDataApp\ package
+mvn -f .\authentication\ package
+mvn -f .\analytics\ package
+mvn -f .\showApp\ package
+docker compose up -d
