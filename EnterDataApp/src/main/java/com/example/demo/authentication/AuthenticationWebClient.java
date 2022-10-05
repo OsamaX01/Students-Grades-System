@@ -12,7 +12,14 @@ public class AuthenticationWebClient {
         this.webClient = WebClient.create("http://AuthenticationApp:7070");
     }
 
-    public Mono<Boolean> callOne(User user) {
+    public Mono<Boolean> getOne() {
+        return webClient.get()
+                .uri("/auth")
+                .retrieve()
+                .bodyToMono(Boolean.class);
+    }
+
+    public Mono<Boolean> postOne(User user) {
         return webClient.post()
                 .uri("/auth")
                 .body(Mono.just(user), User.class)

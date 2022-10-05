@@ -5,7 +5,6 @@ import reactor.core.publisher.Mono;
 
 @Service
 public class AuthenticationService {
-    private boolean isAuthenticated = false;
     private final AuthenticationWebClient reactiveWebClient;
 
     public AuthenticationService(AuthenticationWebClient reactiveWebClient) {
@@ -13,10 +12,10 @@ public class AuthenticationService {
     }
 
     public void authenticate(User user){
-        isAuthenticated = reactiveWebClient.callOne(user).block();
+        reactiveWebClient.postOne(user).block();
     }
 
     public boolean isAuthenticated() {
-        return isAuthenticated;
+        return reactiveWebClient.getOne().block();
     }
 }
